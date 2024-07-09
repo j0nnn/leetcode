@@ -1,0 +1,4 @@
+# Intuition
+We want to create a string without consecutive repeating characters. In order to do this, we need to use up all the highest occurring characters first. We would therefore need to use a maxHeap to figure out which characters to give priority to. The base case occurs when there is only one character left and we are forced to repeat. The other cases are that we are allowed to use the current character or we hvae to pop a different one out to prevent repeating characters.
+* Time Complexity: O(nlogk) for popping and pushing all the characters into the heap where k is the number of alphabets. Since k is a constant, we can simplify this to O(n)
+* Space Complexity: O(k) for storing the occurences of letters. Again, since k is a constant, we can simplify this to O(1)
