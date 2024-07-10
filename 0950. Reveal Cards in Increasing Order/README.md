@@ -1,0 +1,4 @@
+# Intuition
+I initially tried to see if there was a recursion trick or a mathematical approach to this problem but was unsuccessful. Once abandoning this method, the only way to do it is to either reverse the process or to brute force it by running through the process. Once we find the order in which the indicies will be revealed, we simply sort the deck and put the numbers in its corresponding positions.
+* Time Complexity: O(nlogn) for sorting the deck. Building the queue for simulating the process takes O(n). Therefore, the sorting complexity prevails
+* Space Complexity: O(n) from building the queue
