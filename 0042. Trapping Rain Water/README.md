@@ -1,0 +1,9 @@
+# Intuition
+This question is a relatively hard question. My approach was to use the stack approach and pop our indices if it is no longer descending. However, the implementatin is a lot more complex than I thought. To realized this intuition, we would have to maintain a descending stack while iterating through the array. Once we found a height that is larger than the previous one, we pop the stack until the stack is empty or if its last element is larger or equal to the current height. We add up all the water of the indicies we popped to a running total. The tricky part is that we have to store the indices of the heights as we need to find the vertical distance they span. We would also need to calculate the vertical distance not just by the current index - the index in question, but we have to use the index before the index in question to find the acutal bound.
+* Time Complexity: O(n) from iterating through the height array
+* Space Complexity: O(n) from maintaining the decreasing stack
+
+# 2 Pointer Solution
+Another way to approach this issue is to use a 2 pointer method. Keeping a pointer on each end, we move the pointer towards each other if the pointer is pointing to a smaller height, this way, we know that the height we are moving off of is bounded by the height of the other pointer. We also keep track of the maximums that each pointer has encountered so that we can calculate the height of water this particular index can store, then add it to a running total.
+* Space Complexity: O(n) from iterating through the height array
+* Space Complexity: O(1) as we are only using 2 pointers and 2 variables for storing the maximums encountered
