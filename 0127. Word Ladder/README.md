@@ -1,0 +1,4 @@
+# Intuition
+We are given a list of words and also we know that these words are related if they differ by a letter. Knowing this, we can create a graph to show their connections with each other. We can represent this with a hashmap and store inter-word connections with semi-words which are just words with a letter starred out to represent its potential. By creating bi-directional edges between the words and these semi-words, we are able to form a graph that relates one word to another. Since we want the shortest path possible, we perform bfs until we find the endWord or if we exhausted all options.
+* Time Complexity: O(m^2*n) where m is the length of word and n is the number of words. This is because we need to create the bi-directional edges for each words and their semi-words and we also have to iterate through all the words
+* Space Complexity: O(m^2*n) to store each semi-word for each word in the hashmap
