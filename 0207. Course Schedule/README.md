@@ -1,0 +1,9 @@
+# Intuition
+The thought process here is to utilize the list of prerequisites that is given to form an adjacency graph. Then, using it to our advantage. Topologically sorting the courses so that those without prerequisites will be first will allow us to traverse downwards to see how many courses we can take given all the starter courses. Then, comparing it to the number of courses that we are suppose to take will give us the solution to the question
+* Time Complexity: O(m+n) for traversing through all the nodes and edges of the graph at least once to see if they are all connected
+* Space Complexity: O(m+n) for building out the adjacency graph and also the queue
+
+# DFS Solution
+The other way to solve it is to run dfs on each node to see if any given course can be taken by traversing upwards. Here, we need to be careful of cycles in graphs as our previous approach catches this by starting from the very top and only queueing nodes that no longer have prereqs. Here, we would traverse upwards to see if all of its prereqs can be taken, we also keep a list of visited nodes so that if any node is encountered again, we can deduce that it is impossible to take the given course. Therefore, by performing dfs on all nodes, we see if all nodes can be taken. We can also memoize the process by setting the adjacency graph of a node that we have checked to empty so that future calculations skip the entire process for that given node and simply assumes that it could be taken.
+* Time Complexity: O(m+n) for traversing through all the nodes and edges only once as we modify the adjacency graph on success
+* Space Complexity: O(m+n) for building the adjacency graph and the frames for traversing in dfs
